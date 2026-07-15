@@ -1,7 +1,13 @@
 const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+
+const dataDir = path.join(__dirname, 'data');
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 
 const products = [
   {
@@ -128,7 +134,39 @@ app.post('/api/checkout', (req, res) => {
   }
 
   const orderId = `EADC-${Date.now()}`;
+  const order = {
+    orderId,
+    items: cart,
+    total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    createdAt: new Date().toISOString()
+  };
+
+  try {
+    const ordersPath = path.join(dataDir, 'orders.json');
+    const orders = fs.existsSync(ordersPath) ? JSON.parse(fs.readFileSync(ordersPath, 'utf8')) : [];
+    orders.push(order);
+    fs.writeFileSync(ordersPath, JSON.stringify(orders, null, 2));
+  } catch (_) { }
+
   res.json({ success: true, orderId, itemCount: cart.reduce((total, item) => total + item.quantity, 0) });
+});
+
+app.post('/api/contact', (req, res) => {
+  const { name, email, message } = req.body;
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
+
+  const entry = { name, email, message, createdAt: new Date().toISOString() };
+
+  try {
+    const contactsPath = path.join(dataDir, 'contacts.json');
+    const contacts = fs.existsSync(contactsPath) ? JSON.parse(fs.readFileSync(contactsPath, 'utf8')) : [];
+    contacts.push(entry);
+    fs.writeFileSync(contactsPath, JSON.stringify(contacts, null, 2));
+  } catch (_) { }
+
+  res.json({ success: true });
 });
 
 app.listen(port, () => {

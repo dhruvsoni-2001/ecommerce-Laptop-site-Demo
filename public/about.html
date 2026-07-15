@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | EADC Store</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-HoM6R6qY5wtkrvhqI0YVv6jGPaUeVDBk7xM3vj3szpQjkmu3D+g9WgH6aERqex8YqEmXwLZmxp9O8F0dVmYh8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dPrcmT+ZDGc8k78Q9TutuqEuT8Bz1sBzMnNrasxBxM7+kJNdIei2jXz7c42vsXNvvi/+pFV3N7s0u4qU8zBv3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/site.css" />
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
 </head>
 <body>
-  <header class="site-header navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <header class="site-header navbar navbar-expand-lg glass-nav sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/logo.png" class="me-2" alt="EADC" />
@@ -24,33 +24,46 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">Cart <span class="badge bg-info text-dark cart-count">0</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart <span class="badge bg-info cart-count">0</span></a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggleBtn" class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode"><i class="fa-solid fa-moon"></i></button>
+          </li>
         </ul>
       </div>
     </div>
   </header>
-  <main class="py-5">
-    <div class="container">
-      <div class="row align-items-center gy-4">
-        <div class="col-lg-6">
-          <h1>About EADC Store</h1>
-          <p class="lead text-muted">We modernized this ecommerce storefront to offer a cleaner experience, faster browsing, and seamless shopping.</p>
-          <p>EADC Store brings together computers, laptops, storage, and accessories in one simple platform. Our product catalog is built with fast browsing, clean product detail pages, and an easy checkout flow.</p>
-          <ul class="list-unstyled text-muted">
-            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i> Responsive shopping experience</li>
-            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i> Local cart persistence in your browser</li>
-            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i> Simple product search and quick checkout</li>
-          </ul>
-          <a href="shop.html" class="btn btn-primary">Explore products</a>
-        </div>
-        <div class="col-lg-6">
-          <img src="images/about.jpg" alt="About ecommerce" class="img-fluid rounded shadow" />
+  <main>
+    <section class="page-header py-5 text-white">
+      <div class="container">
+        <span class="section-tag" style="background:rgba(201,149,46,0.15);color:var(--gold-light)">Our story</span>
+        <h1 class="display-5">About EADC Store</h1>
+        <p class="text-white-75" style="max-width:600px">We modernized this ecommerce storefront to offer a cleaner experience, faster browsing, and seamless shopping.</p>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <span class="section-tag">Who we are</span>
+            <div class="section-divider" style="margin:0 0 1.5rem 0"></div>
+            <h2 class="h1">Crafted for <span style="color:var(--gold)">performance</span></h2>
+            <p class="text-muted fs-5">EADC Store brings together computers, laptops, storage, and accessories in one simple platform. Our product catalog is built with fast browsing, clean product detail pages, and an easy checkout flow.</p>
+            <ul class="list-unstyled text-muted mt-4">
+              <li class="mb-3"><i class="fa-solid fa-check me-2" style="color:var(--gold)"></i> Responsive shopping experience</li>
+              <li class="mb-3"><i class="fa-solid fa-check me-2" style="color:var(--gold)"></i> Local cart persistence in your browser</li>
+              <li class="mb-3"><i class="fa-solid fa-check me-2" style="color:var(--gold)"></i> Simple product search and quick checkout</li>
+            </ul>
+            <a href="shop.html" class="btn btn-primary btn-lg mt-3">Explore products</a>
+          </div>
+          <div class="col-lg-6">
+            <img src="images/about.jpg" alt="About ecommerce" class="img-fluid rounded glass-card p-2" />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
-  <footer class="footer py-4 text-white">
+  <footer class="footer py-4 text-white glass">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
       <span>© 2026 EADC Store. All rights reserved.</span>
       <div class="d-flex gap-3">
@@ -60,7 +73,7 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" integrity="sha512-VtHzfmsrTG/ABLrUkh7W6b4ZCOUfGv1gOAv4UZ1q3epgRJoSKudaO6RNpGumQ2OkWUtLmEJ5Ptj1d9Z1lqzEtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>

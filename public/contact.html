@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | EADC Store</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-HoM6R6qY5wtkrvhqI0YVv6jGPaUeVDBk7xM3vj3szpQjkmu3D+g9WgH6aERqex8YqEmXwLZmxp9O8F0dVmYh8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dPrcmT+ZDGc8k78Q9TutuqEuT8Bz1sBzMnNrasxBxM7+kJNdIei2jXz7c42vsXNvvi/+pFV3N7s0u4qU8zBv3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/site.css" />
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
 </head>
 <body>
-  <header class="site-header navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <header class="site-header navbar navbar-expand-lg glass-nav sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/logo.png" class="me-2" alt="EADC" />
@@ -24,57 +24,71 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">Cart <span class="badge bg-info text-dark cart-count">0</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart <span class="badge bg-info cart-count">0</span></a></li>
           <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggleBtn" class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode"><i class="fa-solid fa-moon"></i></button>
+          </li>
         </ul>
       </div>
     </div>
   </header>
-  <main class="py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-6">
-          <h1>Get in touch</h1>
-          <p class="text-muted">Have a question about our products or shipping? Send us a message and we will respond quickly.</p>
-          <div class="card p-4 shadow-sm">
-            <div class="mb-3">
-              <h5>Email</h5>
-              <p class="mb-0">support@eadcstore.com</p>
-            </div>
-            <div class="mb-3">
-              <h5>Phone</h5>
-              <p class="mb-0">+1 (555) 123-4567</p>
-            </div>
-            <div>
-              <h5>Address</h5>
-              <p class="mb-0">123 Commerce Blvd, Tech City, USA</p>
+  <main>
+    <section class="page-header py-5 text-white">
+      <div class="container">
+        <span class="section-tag" style="background:rgba(201,149,46,0.15);color:var(--gold-light)">Get in touch</span>
+        <h1 class="display-5">Contact us</h1>
+        <p class="text-white-75" style="max-width:600px">Have a question about our products or shipping? Send us a message and we will respond quickly.</p>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-5">
+            <div class="card glass-card p-4 h-100">
+              <div class="icon-wrap mx-auto mb-4"><i class="fa-solid fa-envelope"></i></div>
+              <h3 class="h4 text-center">Contact information</h3>
+              <div class="section-divider mb-4"></div>
+              <div class="mb-4">
+                <h5 class="h6 text-muted text-uppercase" style="letter-spacing:0.06em">Email</h5>
+                <p class="mb-0 fs-5">support@eadcstore.com</p>
+              </div>
+              <div class="mb-4">
+                <h5 class="h6 text-muted text-uppercase" style="letter-spacing:0.06em">Phone</h5>
+                <p class="mb-0 fs-5">+1 (555) 123-4567</p>
+              </div>
+              <div>
+                <h5 class="h6 text-muted text-uppercase" style="letter-spacing:0.06em">Address</h5>
+                <p class="mb-0 fs-5">123 Commerce Blvd, Tech City, USA</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="card p-4 shadow-sm">
-            <h2>Send us a message</h2>
-            <form>
-              <div class="mb-3">
-                <label class="form-label" for="contactName">Name</label>
-                <input type="text" class="form-control" id="contactName" placeholder="Your name" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label" for="contactEmail">Email</label>
-                <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label" for="contactMessage">Message</label>
-                <textarea class="form-control" id="contactMessage" rows="5" placeholder="How can we help?"></textarea>
-              </div>
-              <button type="button" class="btn btn-primary">Send message</button>
-            </form>
+          <div class="col-lg-7">
+            <div class="card glass-card p-5">
+              <span class="section-tag">Send message</span>
+              <h2 class="h3">We'd love to hear from you</h2>
+              <form class="mt-4">
+                <div class="mb-4">
+                  <label class="form-label" for="contactName">Name</label>
+                  <input type="text" class="form-control glass-input" id="contactName" placeholder="Your name" />
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="contactEmail">Email</label>
+                  <input type="email" class="form-control glass-input" id="contactEmail" placeholder="name@example.com" />
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="contactMessage">Message</label>
+                  <textarea class="form-control glass-input" id="contactMessage" rows="5" placeholder="How can we help?"></textarea>
+                </div>
+                <button type="button" id="contactSendBtn" class="btn btn-primary btn-lg px-5">Send message</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
-  <footer class="footer py-4 text-white">
+  <footer class="footer py-4 text-white glass">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
       <span>© 2026 EADC Store. All rights reserved.</span>
       <div class="d-flex gap-3">
@@ -84,7 +98,7 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" integrity="sha512-VtHzfmsrTG/ABLrUkh7W6b4ZCOUfGv1gOAv4UZ1q3epgRJoSKudaO6RNpGumQ2OkWUtLmEJ5Ptj1d9Z1lqzEtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>
