@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product details | EADC Store</title>
+  <title>Shop | EADC Store</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-HoM6R6qY5wtkrvhqI0YVv6jGPaUeVDBk7xM3vj3szpQjkmu3D+g9WgH6aERqex8YqEmXwLZmxp9O8F0dVmYh8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dPrcmT+ZDGc8k78Q9TutuqEuT8Bz1sBzMnNrasxBxM7+kJNdIei2jXz7c42vsXNvvi/+pFV3N7s0u4qU8zBv3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/site.css" />
@@ -23,15 +23,35 @@
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
           <li class="nav-item"><a class="nav-link" href="cart.html">Cart <span class="badge bg-info text-dark cart-count">0</span></a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </header>
-  <main class="py-5">
-    <div class="container" id="productDetail"></div>
+  <main>
+    <section class="py-5 bg-secondary text-white">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+          <div>
+            <h1 class="display-6 mb-2">Browse our catalog</h1>
+            <p class="mb-0 text-white-75">Find the right equipment and accessories for your workspace.</p>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <input id="searchInput" class="form-control form-control-lg" type="search" placeholder="Search products" aria-label="Search products" />
+            <a href="cart.html" class="btn btn-info btn-lg text-dark">
+              <i class="fa-solid fa-cart-shopping"></i> Cart <span class="badge bg-dark cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container">
+        <div id="productGrid" class="row gy-4"></div>
+      </div>
+    </section>
   </main>
   <footer class="footer py-4 text-white">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
