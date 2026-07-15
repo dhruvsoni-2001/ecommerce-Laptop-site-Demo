@@ -1,0 +1,30 @@
+[
+  {
+    "orderId": "EADC-1784126219244",
+    "items": [
+      {
+        "id": 1,
+        "name": "Ultimate Desktop PC",
+        "price": 899,
+        "image": "images/product1.png",
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "name": "Pro Laptop",
+        "price": 1099,
+        "image": "images/product2.png",
+        "quantity": 1
+      },
+      {
+        "id": 3,
+        "name": "Smart Tablet",
+        "price": 349,
+        "image": "images/product3.png",
+        "quantity": 1
+      }
+    ],
+    "total": 2347,
+    "createdAt": "2026-07-15T14:36:59.244Z"
+  }
+]
